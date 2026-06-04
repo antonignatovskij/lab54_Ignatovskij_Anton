@@ -1,0 +1,114 @@
+[
+{
+    "model": "shop_app.category",
+    "pk": 1,
+    "fields": {
+        "cat_title": "Овощи",
+        "cat_desc": "Наши любимые витаминнонасыщенные овощи"
+    }
+},
+{
+    "model": "shop_app.category",
+    "pk": 2,
+    "fields": {
+        "cat_title": "Фрукты",
+        "cat_desc": "Сладкие и очень полезные"
+    }
+},
+{
+    "model": "shop_app.category",
+    "pk": 3,
+    "fields": {
+        "cat_title": "продукт из мяса",
+        "cat_desc": "Всеми обожаемые деликатесы из мяса, как без них прожить и дня?"
+    }
+},
+{
+    "model": "shop_app.category",
+    "pk": 4,
+    "fields": {
+        "cat_title": "Молочная продукция",
+        "cat_desc": "богатые кальцием и белком продукты, от молока до сыров с плесенью!"
+    }
+},
+{
+    "model": "shop_app.category",
+    "pk": 5,
+    "fields": {
+        "cat_title": "Выпечка",
+        "cat_desc": "от суровых ржаных булок до нежных булочек"
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 1,
+    "fields": {
+        "prod_title": "Картошка",
+        "prod_desc": "Картофель местный, самый вкусный в мире",
+        "category": 1,
+        "date_of_add": "2026-06-04",
+        "price": "114.54",
+        "product_image": "https://www.tveragroprom.com/wp-content/uploads/2023/10/nature-plant-field-fruit-food-produce-1334453-pxhere.com_.jpg"
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 2,
+    "fields": {
+        "prod_title": "яблоко Польское",
+        "prod_desc": "выращены в Рачеховице добрыми фермерами",
+        "category": 2,
+        "date_of_add": "2026-06-04",
+        "price": "323.34",
+        "product_image": "https://e1.edimdoma.ru/data/ingredients/0000/2374/2374-ed4_wide.jpg?1487746348"
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 3,
+    "fields": {
+        "prod_title": "сыр",
+        "prod_desc": "asd",
+        "category": 4,
+        "date_of_add": "2026-06-04",
+        "price": "123.00",
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpAJXQrLPDAN8AIMT29dV9DAh609IJXaX95Q&s"
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 4,
+    "fields": {
+        "prod_title": "колбаса Рижская",
+        "prod_desc": "колбаса Рижская копченая, произведена в Беларуси",
+        "category": 3,
+        "date_of_add": "2026-06-04",
+        "price": "655.66",
+        "product_image": "https://brestmeat.by/upload/resize_cache/webp/iblock/9d0/weffz2y4o5f753ktowcj0wfzpslderjt.webp"
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 5,
+    "fields": {
+        "prod_title": "Багет",
+        "prod_desc": "Хрустящий французский багет",
+        "category": 5,
+        "date_of_add": "2026-06-04",
+        "price": "45.00",
+        "product_image": "https://s0.rbk.ru/v6_top_pics/media/img/5/89/756698140374895.webp"
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 6,
+    "fields": {
+        "prod_title": "Лук репчатый",
+        "prod_desc": "Лук репчатый местный",
+        "category": 1,
+        "date_of_add": "2026-06-04",
+        "price": "26.54",
+        "product_image": "https://tropic-fruits.ru/wp-content/uploads/2022/07/%D0%BB%D1%83%D0%BA-%D1%80%D0%B5%D0%BF%D1%87.jpg"
+    }
+}
+]

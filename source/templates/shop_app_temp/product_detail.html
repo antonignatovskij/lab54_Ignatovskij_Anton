@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block nav %}
+<a class="nav-link" href="{% url 'add_category' %}">
+    Добавить категорию
+</a>
+<a class="nav-link" href="{% url 'add_product' %}">
+    Добавить товар
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="card border-0 shadow-lg overflow-hidden">
+        <div class="row g-0">
+            <div class="col-md-5">
+                <img src="{{ product.product_image }}" alt="{{ product.prod_title }}" class="img-fluid w-100 h-100"
+                     style="object-fit: cover; min-height: 450px;">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body p-4 p-lg-5">
+                    <h1 class="card-title mb-3">
+                        {{ product.prod_title }}
+                    </h1>
+                    <span class="badge bg-primary mb-3 fs-6">
+                            {{ product.category.cat_title }}
+                        </span>
+                    <h2 class="text-success fw-bold mb-4">
+                        {{ product.price }}
+                    </h2>
+                    <p class="card-text text-secondary fs-5 lh-lg">
+                        {{ product.prod_desc }}
+                    </p>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">
+                            Добавлено: {{ product.date_of_add }}
+                        </small>
+                        <a href="{% url 'products_list_v2' %}" class="btn btn-outline-secondary">
+                            Назад к товарам
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
