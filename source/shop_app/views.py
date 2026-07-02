@@ -1,9 +1,8 @@
-from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render, get_object_or_404, redirect
 
 from shop_app.models import Product, Category
 
-from shop_app.prod_validation import PrdVld
+from shop_app.forms import ProductForm
 
 # Create your views here.
 
@@ -33,27 +32,35 @@ def category_add_view(request):
     return render(request, 'shop_app_temp/category_create.html')
 
 def product_add_view(request):
-    context = {'categories': Category.objects.all()}
-    if request.method == 'POST':
-        new_product = {
-            'title': request.POST.get('title').strip(),
-            'desc': request.POST.get('desc').strip(),
-            'category': request.POST.get('category'),
-            'price': request.POST.get('price').strip(),
-            'image': request.POST.get('img').strip()
-        }
-        flag = PrdVld.validate(new_product)
-        if flag == True:
-            product = Product.objects.create(
-                prod_title = new_product['title'],
-                prod_desc = new_product['desc'],
-                price = new_product['price'],
-                product_image = new_product['image'],
-                category_id = int(new_product['category']),
-            )
-        else:
-            varning = {'varning': flag}
-            return render(request, 'shop_app_temp/product_create.html', varning)
-        return redirect('product_detail', pk=product.pk)
-    return render(request, 'shop_app_temp/product_create.html', context)
+    form = ProductForm()
+    if request.method == 'GET':
+        return render(request, 'shop_app_temp/product_create.html', {'form': form})
+    form = ProductForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('products_list')
+    return render(request, 'shop_app_temp/product_create.html', {'form': form})
+    # context = {'categories': Category.objects.all()}
+    # if request.method == 'POST':
+    #     new_product = {
+    #         'title': request.POST.get('title').strip(),
+    #         'desc': request.POST.get('desc').strip(),
+    #         'category': request.POST.get('category'),
+    #         'price': request.POST.get('price').strip(),
+    #         'image': request.POST.get('img').strip()
+    #     }
+    #     flag = PrdVld.validate(new_product)
+    #     if flag == True:
+    #         product = Product.objects.create(
+    #             prod_title = new_product['title'],
+    #             prod_desc = new_product['desc'],
+    #             price = new_product['price'],
+    #             product_image = new_product['image'],
+    #             category_id = int(new_product['category']),
+    #         )
+    #     else:
+    #         varning = {'varning': flag}
+    #         return render(request, 'shop_app_temp/product_create.html', varning)
+    #     return redirect('product_detail', pk=product.pk)
+    # return render(request, 'shop_app_temp/product_create.html', context)
 
