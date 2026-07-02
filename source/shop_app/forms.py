@@ -1,10 +1,14 @@
 from django import forms
+from django.core.validators import MinValueValidator
 from django.forms import widgets
 
-from shop_app.models import Product, Category
+from shop_app.models import Product
 
 
 class ProductForm(forms.ModelForm):
+    remain = forms.IntegerField(min_value=0)
+    prod_price = forms.DecimalField(max_digits=7, decimal_places=2)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
