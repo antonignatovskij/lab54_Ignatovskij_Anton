@@ -2,7 +2,6 @@ class PrdVld:
     @staticmethod
     def validate(product):
         flag = []
-        print(product['image'])
         if product['title'] == '':
             flag.append('Поле для названия обязательно к заполнению')
 
@@ -24,8 +23,6 @@ class PrdVld:
 
         if product['image'] == '':
             flag.append('Поле для юрл картинки обязательно к заполнению!')
-        print(flag)
-        print(131231321232312312332)
         if len(flag) == 0:
             return True
         return flag

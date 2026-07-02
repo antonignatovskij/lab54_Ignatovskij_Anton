@@ -35,7 +35,6 @@ def category_add_view(request):
 def product_add_view(request):
     context = {'categories': Category.objects.all()}
     if request.method == 'POST':
-        print(1231231212)
         new_product = {
             'title': request.POST.get('title').strip(),
             'desc': request.POST.get('desc').strip(),
@@ -43,10 +42,7 @@ def product_add_view(request):
             'price': request.POST.get('price').strip(),
             'image': request.POST.get('img').strip()
         }
-        print(new_product)
         flag = PrdVld.validate(new_product)
-        print(11111)
-        print(flag)
         if flag == True:
             product = Product.objects.create(
                 prod_title = new_product['title'],
@@ -57,8 +53,6 @@ def product_add_view(request):
             )
         else:
             varning = {'varning': flag}
-            print(1233213212)
-            print(varning)
             return render(request, 'shop_app_temp/product_create.html', varning)
         return redirect('product_detail', pk=product.pk)
     return render(request, 'shop_app_temp/product_create.html', context)
