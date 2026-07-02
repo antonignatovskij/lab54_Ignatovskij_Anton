@@ -14,6 +14,7 @@ class Product(models.Model):
     date_of_add = models.DateField(auto_now_add=True, verbose_name="Product Date of Add")
     price = models.DecimalField(max_digits=7, decimal_places=2, null=False, blank=False, verbose_name="Product Price")
     product_image = models.URLField(max_length=400, null=False, blank=False, verbose_name="Product Image")
+    remain = models.IntegerField(default=0, null=True, blank=True, verbose_name="Product Remain")
 
     def __str__(self):
         return self.prod_title
