@@ -25,9 +25,21 @@
                     <span class="badge bg-primary mb-3 fs-6">
                             {{ product.category.cat_title }}
                         </span>
-                    <h2 class="text-success fw-bold mb-4">
-                        {{ product.price }}
-                    </h2>
+                    <div class="row text-center mt-4 mb-4">
+                        <div class="col border-end">
+                            <div class="text-muted small">Цена</div>
+                            <div class="fs-4 fw-bold text-warning">
+                                {{ product.price }}
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="text-muted small">Осталось</div>
+                            <div class="fs-4 fw-bold text-secondary">
+                                {{ product.remain }}
+                            </div>
+                        </div>
+                    </div>
                     <p class="card-text text-secondary fs-5 lh-lg">
                         {{ product.prod_desc }}
                     </p>
@@ -38,6 +50,15 @@
                         </small>
                         <a href="{% url 'products_list_v2' %}" class="btn btn-outline-secondary">
                             Назад к товарам
+                        </a>
+                        <a href="{% url 'product_update' product.pk %}"
+                           class="btn btn-outline-warning">
+                            Изменить
+                        </a>
+
+                        <a href="{% url 'product_delete' product.pk %}"
+                           class="btn btn-outline-secondary">
+                            Удалить
                         </a>
                     </div>
 
