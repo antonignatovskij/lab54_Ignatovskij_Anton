@@ -1,0 +1,6 @@
+from shop_app.views.products import ProductListView
+from shop_app.views.products import ProductDetailView
+from shop_app.views.products import CategoryCreateView
+from shop_app.views.products import ProductCreateView
+from shop_app.views.products import ProductUpdateView
+from shop_app.views.products import ProductDeleteView

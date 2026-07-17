@@ -7,6 +7,12 @@
 <a class="nav-link" href="{% url 'add_product' %}">
     Добавить товар
 </a>
+<div class="d-flex">
+    <form class="d-flex mx-auto" action="" method="GET">
+        {{ search_form }}
+        <button class="btn btn-sm btn-outline-warning mx-2" type="submit"> Поиск </button>
+    </form>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -76,4 +82,7 @@
     </div>
     {% endif %}
 </div>
+
+{% include 'partial/pagination.html' %}
+
 {% endblock %}
