@@ -7,7 +7,7 @@ from shop_app.models import Product
 
 class ProductForm(forms.ModelForm):
     remain = forms.IntegerField(min_value=0)
-    prod_price = forms.DecimalField(max_digits=7, decimal_places=2)
+    price = forms.DecimalField(max_digits=7, decimal_places=2)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

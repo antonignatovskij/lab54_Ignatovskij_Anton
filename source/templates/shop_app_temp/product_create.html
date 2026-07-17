@@ -15,15 +15,13 @@
                 <h3 class="mb-0">Добавление продукта</h3>
             </div>
             <div class="card-body p-4">
-                <form action="" id="prod-form" method="POST">
-                        {% bootstrap_form form layout="floating" %}
-                        {% csrf_token %}
-                </form>
+                {% include 'partial/prod_form.html' %}
+
+            </div>
+            <div class="card-footer bg-white text-center py-3">
                 <button type="submit" form="prod-form" class="btn btn-warning">
                             Сохранить
                 </button>
-            </div>
-            <div class="card-footer bg-white text-center py-3">
                 <a href="{% url 'products_list_v2' %}" class="btn btn-outline-secondary">Назад</a>
             </div>
         </div>
