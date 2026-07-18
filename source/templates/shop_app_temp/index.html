@@ -7,6 +7,15 @@
 <a class="nav-link" href="{% url 'add_product' %}">
     Добавить товар
 </a>
+<div class="d-flex">
+    <form class="d-flex mx-auto" action="" method="GET">
+        {{ search_form }}
+        <button class="btn btn-sm btn-outline-warning mx-2" type="submit"> Поиск </button>
+    </form>
+</div>
+<a class="nav-link" href="{% url 'cart_list' %}">
+    <i class="bi bi-cart-check text-warning"></i> корзина
+</a>
 {% endblock %}
 
 {% block content %}
@@ -52,20 +61,24 @@
                         </small>
                     </div>
                 </div>
-                <div class="card-footer bg-success-subtle border-top ">
-                    <div class="d-flex justify-content-center gap-2">
-                        <a href="{% url 'product_update' product.pk %}"
-                           class="btn btn-warning text-dark fw-semibold rounded-pill">
-                            Изменить
+                <div class="card-footer bg-info-subtle border-top py-3">
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'cart_add' product.pk %}"
+                           class="btn btn-success fw-semibold">
+                            В корзину
                         </a>
-
-                        <a href="{% url 'product_delete' product.pk %}"
-                           class="btn btn-secondary rounded-pill">
-                            Удалить
-                        </a>
+                        <div class="d-flex justify-content-between gap-2">
+                            <a href="{% url 'product_update' product.pk %}"
+                               class="btn btn-warning flex-fill px-5">
+                                Изменить
+                            </a>
+                            <a href="{% url 'product_delete' product.pk %}"
+                               class="btn btn-danger flex-fill">
+                                Удалить
+                            </a>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
         {% endfor %}
@@ -76,4 +89,7 @@
     </div>
     {% endif %}
 </div>
+
+{% include 'partial/pagination.html' %}
+
 {% endblock %}

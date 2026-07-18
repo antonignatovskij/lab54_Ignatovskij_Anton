@@ -40,27 +40,48 @@
     }
 },
 {
-    "model": "shop_app.product",
-    "pk": 1,
+    "model": "shop_app.category",
+    "pk": 6,
     "fields": {
-        "prod_title": "Картошка",
-        "prod_desc": "Картофель местный, самый вкусный в мире",
-        "category": 1,
-        "date_of_add": "2026-06-04",
-        "price": "114.54",
-        "product_image": "https://www.tveragroprom.com/wp-content/uploads/2023/10/nature-plant-field-fruit-food-produce-1334453-pxhere.com_.jpg"
+        "cat_title": "ASASaS",
+        "cat_desc": ""
+    }
+},
+{
+    "model": "shop_app.category",
+    "pk": 7,
+    "fields": {
+        "cat_title": "Овощиtest",
+        "cat_desc": null
+    }
+},
+{
+    "model": "shop_app.category",
+    "pk": 8,
+    "fields": {
+        "cat_title": "Овощиtests",
+        "cat_desc": null
+    }
+},
+{
+    "model": "shop_app.category",
+    "pk": 9,
+    "fields": {
+        "cat_title": "sdsdsdsdsd",
+        "cat_desc": null
     }
 },
 {
     "model": "shop_app.product",
     "pk": 2,
     "fields": {
-        "prod_title": "яблоко Польское",
+        "prod_title": "яблоко Польскоеe",
         "prod_desc": "выращены в Рачеховице добрыми фермерами",
         "category": 2,
         "date_of_add": "2026-06-04",
         "price": "323.34",
-        "product_image": "https://e1.edimdoma.ru/data/ingredients/0000/2374/2374-ed4_wide.jpg?1487746348"
+        "product_image": "https://e1.edimdoma.ru/data/ingredients/0000/2374/2374-ed4_wide.jpg?1487746348",
+        "remain": 34
     }
 },
 {
@@ -72,7 +93,8 @@
         "category": 4,
         "date_of_add": "2026-06-04",
         "price": "123.00",
-        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpAJXQrLPDAN8AIMT29dV9DAh609IJXaX95Q&s"
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpAJXQrLPDAN8AIMT29dV9DAh609IJXaX95Q&s",
+        "remain": 0
     }
 },
 {
@@ -84,7 +106,8 @@
         "category": 3,
         "date_of_add": "2026-06-04",
         "price": "655.66",
-        "product_image": "https://brestmeat.by/upload/resize_cache/webp/iblock/9d0/weffz2y4o5f753ktowcj0wfzpslderjt.webp"
+        "product_image": "https://brestmeat.by/upload/resize_cache/webp/iblock/9d0/weffz2y4o5f753ktowcj0wfzpslderjt.webp",
+        "remain": 0
     }
 },
 {
@@ -96,7 +119,8 @@
         "category": 5,
         "date_of_add": "2026-06-04",
         "price": "45.00",
-        "product_image": "https://s0.rbk.ru/v6_top_pics/media/img/5/89/756698140374895.webp"
+        "product_image": "https://s0.rbk.ru/v6_top_pics/media/img/5/89/756698140374895.webp",
+        "remain": 0
     }
 },
 {
@@ -108,7 +132,263 @@
         "category": 1,
         "date_of_add": "2026-06-04",
         "price": "26.54",
-        "product_image": "https://tropic-fruits.ru/wp-content/uploads/2022/07/%D0%BB%D1%83%D0%BA-%D1%80%D0%B5%D0%BF%D1%87.jpg"
+        "product_image": "https://tropic-fruits.ru/wp-content/uploads/2022/07/%D0%BB%D1%83%D0%BA-%D1%80%D0%B5%D0%BF%D1%87.jpg",
+        "remain": 0
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 9,
+    "fields": {
+        "prod_title": "Картошка",
+        "prod_desc": "картошка",
+        "category": 1,
+        "date_of_add": "2026-07-02",
+        "price": "12323.20",
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEALfW8msuXVQH_zaAWrSsbPGwq3jas9zwCQ&s",
+        "remain": 12
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 10,
+    "fields": {
+        "prod_title": "огурец",
+        "prod_desc": "огурец сочный",
+        "category": 1,
+        "date_of_add": "2026-07-02",
+        "price": "255.23",
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEALfW8msuXVQH_zaAWrSsbPGwq3jas9zwCQ&s",
+        "remain": -1
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 15,
+    "fields": {
+        "prod_title": "Картошка123",
+        "prod_desc": "123123",
+        "category": 2,
+        "date_of_add": "2026-07-17",
+        "price": "255.23",
+        "product_image": "https://www.tveragroprom.com/wp-content/uploads/2023/10/nature-plant-field-fruit-food-produce-1334453-pxhere.com_.jpg",
+        "remain": 0
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 16,
+    "fields": {
+        "prod_title": "test fruit 1",
+        "prod_desc": null,
+        "category": 2,
+        "date_of_add": "2026-07-18",
+        "price": "12.00",
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEALfW8msuXVQH_zaAWrSsbPGwq3jas9zwCQ&s",
+        "remain": 13
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 17,
+    "fields": {
+        "prod_title": "set rer",
+        "prod_desc": null,
+        "category": 5,
+        "date_of_add": "2026-07-18",
+        "price": "43.00",
+        "product_image": "https://e1.edimdoma.ru/data/ingredients/0000/2374/2374-ed4_wide.jpg?1487746348",
+        "remain": 2
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 18,
+    "fields": {
+        "prod_title": "affassfasfa",
+        "prod_desc": "safsafasf",
+        "category": 3,
+        "date_of_add": "2026-07-18",
+        "price": "123.00",
+        "product_image": "https://www.tveragroprom.com/wp-content/uploads/2023/10/nature-plant-field-fruit-food-produce-1334453-pxhere.com_.jpg",
+        "remain": 14
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 19,
+    "fields": {
+        "prod_title": "яблоко  df Польское",
+        "prod_desc": "adsasdasd",
+        "category": 3,
+        "date_of_add": "2026-07-18",
+        "price": "32.00",
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrQXb3YAuGnKJhs6QVnH_qgHQOu9EDAJCgVQ&s",
+        "remain": 41
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 20,
+    "fields": {
+        "prod_title": "safasfaf",
+        "prod_desc": "afasfaasf",
+        "category": 8,
+        "date_of_add": "2026-07-18",
+        "price": "141.00",
+        "product_image": "https://e1.edimdoma.ru/data/ingredients/0000/2374/2374-ed4_wide.jpg?1487746348",
+        "remain": 12
+    }
+},
+{
+    "model": "shop_app.product",
+    "pk": 21,
+    "fields": {
+        "prod_title": "agaga",
+        "prod_desc": "agagaa",
+        "category": 3,
+        "date_of_add": "2026-07-18",
+        "price": "13.00",
+        "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEALfW8msuXVQH_zaAWrSsbPGwq3jas9zwCQ&s",
+        "remain": 1
+    }
+},
+{
+    "model": "shop_app.cart",
+    "pk": 13,
+    "fields": {
+        "product": 9,
+        "quantity": 1
+    }
+},
+{
+    "model": "shop_app.order",
+    "pk": 1,
+    "fields": {
+        "customer_name": "Антон Стимовский",
+        "phone": "123123213123",
+        "address": "132123",
+        "created_at": "2026-07-18T02:00:00.788Z"
+    }
+},
+{
+    "model": "shop_app.order",
+    "pk": 2,
+    "fields": {
+        "customer_name": "фыв",
+        "phone": "фыв",
+        "address": "фыв",
+        "created_at": "2026-07-18T02:04:49.521Z"
+    }
+},
+{
+    "model": "shop_app.order",
+    "pk": 3,
+    "fields": {
+        "customer_name": "фыв",
+        "phone": "фыв",
+        "address": "фыв",
+        "created_at": "2026-07-18T02:05:02.343Z"
+    }
+},
+{
+    "model": "shop_app.order",
+    "pk": 4,
+    "fields": {
+        "customer_name": "asd",
+        "phone": "asd",
+        "address": "asd",
+        "created_at": "2026-07-18T02:05:46.285Z"
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 1,
+    "fields": {
+        "order": 1,
+        "product": 16,
+        "quantity": 4
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 2,
+    "fields": {
+        "order": 1,
+        "product": 2,
+        "quantity": 3
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 3,
+    "fields": {
+        "order": 1,
+        "product": 17,
+        "quantity": 1
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 4,
+    "fields": {
+        "order": 2,
+        "product": 9,
+        "quantity": 1
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 5,
+    "fields": {
+        "order": 2,
+        "product": 16,
+        "quantity": 7
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 6,
+    "fields": {
+        "order": 2,
+        "product": 2,
+        "quantity": 3
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 7,
+    "fields": {
+        "order": 2,
+        "product": 17,
+        "quantity": 2
+    }
+},
+{
+    "model": "shop_app.orderitem",
+    "pk": 8,
+    "fields": {
+        "order": 3,
+        "product": 16,
+        "quantity": 1
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$kmzan2KC4vm9vKO9GE5z4d$ZZYiBs69I3NQbztjuopInfZUmd09OrA7aVd96C35878=",
+        "last_login": "2026-07-18T02:01:38.574Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-06-04T20:24:04.041Z",
+        "groups": [],
+        "user_permissions": []
     }
 }
 ]

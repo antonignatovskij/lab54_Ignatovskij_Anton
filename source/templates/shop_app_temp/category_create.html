@@ -4,39 +4,26 @@
 <a class="nav-link" href="{% url 'add_product' %}">
     Добавить товар
 </a>
+<a class="nav-link" href="{% url 'cart_list' %}">
+    <i class="bi bi-cart-check text-warning"></i> корзина
+</a>
 {% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
+   <div class="col-md-8 col-lg-6">
         <div class="card shadow-lg border-0">
             <div class="card-header bg-warning text-dark text-center py-3">
-                <h3 class="mb-0">Добавление категории</h3>
+                <h3 class="mb-0">Добавление Категории</h3>
             </div>
             <div class="card-body p-4">
-                <form method="post">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Название категории</label>
-                        <input type="text" name="cat_title" class="form-control" placeholder="Введите название категории">
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label fw-semibold">Описание</label>
-                        <textarea name="cat_desc" rows="5" class="form-control" placeholder="Введите описание категории"></textarea>
-                    </div>
-                    {% if varning %}
-                        <div class="alert alert-danger">
-                            <div>{{ varning }}</div>
-                        </div>
-                    {% endif %}
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-warning btn-lg">
-                            Добавить категорию
-                        </button>
-                    </div>
-                </form>
+                {% include 'partial/prod_form.html' %}
+
             </div>
             <div class="card-footer bg-white text-center py-3">
+                <button type="submit" form="prod-form" class="btn btn-warning">
+                            Сохранить
+                </button>
                 <a href="{% url 'products_list_v2' %}" class="btn btn-outline-secondary">Назад</a>
             </div>
         </div>
