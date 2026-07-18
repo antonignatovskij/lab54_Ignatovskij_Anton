@@ -1,5 +1,4 @@
 from django import forms
-from django.core.validators import MinValueValidator
 from django.forms import widgets
 
 from shop_app.models import Product, Category, Order
