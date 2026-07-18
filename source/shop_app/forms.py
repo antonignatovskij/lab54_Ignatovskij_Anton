@@ -2,7 +2,7 @@ from django import forms
 from django.core.validators import MinValueValidator
 from django.forms import widgets
 
-from shop_app.models import Product, Category
+from shop_app.models import Product, Category, Order
 
 
 class ProductForm(forms.ModelForm):
@@ -38,3 +38,18 @@ class CategoryForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label="Найти")
+
+class OrderForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+
+    class Meta:
+        model = Order
+        fields = [
+            "customer_name",
+            "address",
+            "phone"
+        ]

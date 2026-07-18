@@ -5,9 +5,9 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from shop_app.models import Product, Category, Cart
+from shop_app.models import Product, Category, Cart, Order, OrderItem
 
-from shop_app.forms import ProductForm, CategoryForm, SearchForm
+from shop_app.forms import ProductForm, CategoryForm, SearchForm, OrderForm
 
 # Create your views here.
 
@@ -114,11 +114,11 @@ class CartListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        total = 0
-        for item in context["items"]:
-            total += item.product.price * item.quantity
+        total = sum(item.product.price * item.quantity for item in context["items"])
 
         context["total"] = total
+        context["form"] = OrderForm()   # обязательно
+
         return context
 
 
@@ -126,3 +126,30 @@ class CartDeleteView(DeleteView):
     template_name = 'shop_app_temp/cart.html'
     model = Cart
     success_url = reverse_lazy("cart_list")
+
+class OrderCreateView(CreateView):
+    model = Order
+    form_class = OrderForm
+    template_name = "shop_app_temp/cart.html"
+    success_url = reverse_lazy("products_list")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["items"] = Cart.objects.all()
+        return context
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        cart_items = Cart.objects.all()
+
+        for item in cart_items:
+            OrderItem.objects.create(
+                order=self.object,
+                product=item.product,
+                quantity=item.quantity
+            )
+
+        cart_items.delete()
+
+        return response
