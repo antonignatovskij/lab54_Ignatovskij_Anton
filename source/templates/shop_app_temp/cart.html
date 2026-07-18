@@ -31,9 +31,12 @@
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.product.price|floatformat:2 }}</td>
                         <td class="text-center">
-                            <a href="#" class="btn btn-sm btn-danger">
-                                Удалить
-                            </a>
+                            <form action="{% url 'cart_delete' item.pk %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-danger rounded-pill">
+                                    Удалить
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 {% endfor %}
@@ -50,4 +53,3 @@
 </div>
 {% endblock %}
 
-<!--{% url 'cart_delete' item.pk %}-->

@@ -120,3 +120,9 @@ class CartListView(ListView):
 
         context["total"] = total
         return context
+
+
+class CartDeleteView(DeleteView):
+    template_name = 'shop_app_temp/cart.html'
+    model = Cart
+    success_url = reverse_lazy("cart_list")
