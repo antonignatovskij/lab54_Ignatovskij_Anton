@@ -13,6 +13,9 @@
         <button class="btn btn-sm btn-outline-warning mx-2" type="submit"> Поиск </button>
     </form>
 </div>
+<a class="nav-link" href="{% url 'cart_list' %}">
+    корзина
+</a>
 {% endblock %}
 
 {% block content %}
@@ -68,6 +71,11 @@
                         <a href="{% url 'product_delete' product.pk %}"
                            class="btn btn-secondary rounded-pill">
                             Удалить
+                        </a>
+
+                        <a href="{% url 'cart_add' product.pk %}"
+                           class="btn btn-secondary rounded-pill">
+                            В корзину
                         </a>
                     </div>
                 </div>

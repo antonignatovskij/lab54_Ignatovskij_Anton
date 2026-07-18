@@ -1,10 +1,11 @@
 from urllib.parse import urlencode
 
 from django.db.models import Q
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from shop_app.models import Product, Category
+from shop_app.models import Product, Category, Cart
 
 from shop_app.forms import ProductForm, CategoryForm, SearchForm
 
@@ -79,3 +80,43 @@ class ProductDeleteView(DeleteView):
     model = Product
     context_object_name = 'product'
     success_url = reverse_lazy('products_list')
+
+
+
+class CartAddView(CreateView):
+    model = Cart
+    fields = []
+
+    def get(self, request, *args, **kwargs):
+        product = get_object_or_404(Product, pk=self.kwargs["pk"])
+
+        if product.remain == 0:
+            return redirect("products_list")
+
+        item = Cart.objects.filter(product=product).first()
+        if item:
+            if item.quantity < product.remain:
+                item.quantity += 1
+                item.save()
+        else:
+            Cart.objects.create(
+                product=product,
+                quantity=1
+            )
+        return redirect("products_list")
+
+
+class CartListView(ListView):
+    model = Cart
+    template_name = "shop_app_temp/cart.html"
+    context_object_name = "items"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        total = 0
+        for item in context["items"]:
+            total += item.product.price * item.quantity
+
+        context["total"] = total
+        return context

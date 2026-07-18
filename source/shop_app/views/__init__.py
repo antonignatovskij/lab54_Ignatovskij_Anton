@@ -4,3 +4,5 @@ from shop_app.views.products import CategoryCreateView
 from shop_app.views.products import ProductCreateView
 from shop_app.views.products import ProductUpdateView
 from shop_app.views.products import ProductDeleteView
+from shop_app.views.products import CartListView
+from shop_app.views.products import CartAddView

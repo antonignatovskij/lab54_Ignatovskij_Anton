@@ -25,3 +25,10 @@ class Product(models.Model):
     class Meta:
         db_table = 'Products'
         verbose_name = 'product'
+
+class Cart(models.Model):
+    product = models.ForeignKey('shop_app.Product', related_name='cart', on_delete=models.CASCADE, null=False, blank=False, verbose_name="Корзина")
+    quantity = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.product} ({self.quantity})"
